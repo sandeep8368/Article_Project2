@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Creepster', cursive;
+    background: radial-gradient(circle, #000000 30%, #1a1a1a 100%);
+    color: #f2f2f2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: backgroundPulse 10s infinite alternate;
+}
+
+/* Flickering title */
+h1 {
+    font-size: 48px;
+    color: #ff0000;
+    text-shadow: 0 0 15px #990000, 2px 2px 6px black;
+    animation: flicker 2s infinite;
+    margin: 30px 0;
+}
+
+/* Form horror style */
+form {
+    background: rgba(20, 0, 0, 0.85);
+    border: 2px solid #8b0000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ff0000;
+    padding: 30px;
+    width: 400px;
+}
+
+/* Labels and inputs */
+label {
+    color: #e60000;
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    box-shadow: inset 0 0 5px #330000;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #cc0000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ff0000;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #8b0000;
+    box-shadow: 0 0 20px #ff1a1a;
+    transform: scale(1.05);
+}
+
+/* Blood drip effect (bottom of form) */
+form::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #ff0000,
+        #ff0000 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    animation: drip 1s infinite;
+    margin-top: 15px;
+}
+
+/* Animations */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0;
+    }
+}
+
+@keyframes backgroundPulse {
+    from {
+        background-color: #000;
+    }
+    to {
+        background-color: #220000;
+    }
+}
+
+@keyframes drip {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(2px); }
+    100% { transform: translateY(0px); }
+}
+
+
+
+
+
+.add-article {
+    background-color: #007bff; /* Blue */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px #007bff;
+}
+
+.add-article:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 20px #66b3ff;
+}

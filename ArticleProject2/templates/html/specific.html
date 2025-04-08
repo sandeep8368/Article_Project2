@@ -1,0 +1,16 @@
+{% extends 'html/index.html' %}
+{% block title %}
+    <h1>
+        Specific Article
+    </h1>
+{% endblock %}
+
+{% block content %}
+    
+    <h2>{{data.title}}</h2> 
+    <p>{{data.desc}}</p>
+    <a href="{% url 'home' %}">
+        <button>Home</button>
+    </a>
+   
+{% endblock %}

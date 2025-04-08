@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <center>
+        
+    {% block title %}<h1>THIS IS ARTICLE PROJECT</h1>{% endblock %}
+    {% block content %}
+    <form method="post">
+       {% csrf_token %}
+        <label for="name">Title</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="desc">Discription</label>
+        <textarea name="desc" id="desc"></textarea>
+        <br>
+        <a href="">
+            <button type="submit">Submit</button>
+        </a>
+        <br> <br>
+        
+    </form>
+    <a href="{% url 'all' %}">
+        <button>All Articles</button>
+    </a>
+</center>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'html/index.html' %}
+{% block title %} <h1>All Articles..</h1> {% endblock %}
+{% block content %}
+{% if data %}
+    {% for i in data %}
+        <h3>{{i.title | upper }}</h3> 
+        <p>{{i.desc | truncatechars:30}}</p> 
+        <a href="{% url 'specific' i.id %}">
+            <button>Read More</button>
+        </a>
+    {% endfor %}
+{% endif %}
+<br> <br>
+
+<a href="{% url 'home' %}">
+    <button class="add-article">Add Article</button>
+</a>
+
+
+{% endblock %}
